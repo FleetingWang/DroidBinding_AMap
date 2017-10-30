@@ -17,6 +17,7 @@
 [Rr]eleases/
 [Xx]64/
 [Xx]86/
+!**/Jars/[Xx]86/
 [Bb]uild/
 bld/
 [Bb]in/

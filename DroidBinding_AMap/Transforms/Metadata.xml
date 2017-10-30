@@ -6,16 +6,20 @@
   This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
   <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
   -->
+  <!--移除被标记为废弃的接口-->
   <remove-node path="/api/package[@name='com.amap.api.navi']/interface[@name='AMapNaviListener']/method[@name='OnUpdateTrafficFacility' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.model.AMapNaviTrafficFacilityInfo']]" />
   <remove-node path="/api/package[@name='com.amap.api.navi']/interface[@name='AMapNaviListener']/method[@name='OnUpdateTrafficFacility' and count(parameter)=1 and parameter[1][@type='com.autonavi.tbt.TrafficFacilityInfo']]" />
-  <remove-node path="/api/package[@name='com.amap.api.navi']/interface[@name='AMapNaviListener']/method[@name='onArriveDestination' and count(parameter)=1 and parameter[1][@type='com.autonavi.tbt.NaviStaticInfo']]" />
+  <!--<remove-node path="/api/package[@name='com.amap.api.navi']/interface[@name='AMapNaviListener']/method[@name='onArriveDestination' and count(parameter)=1 and parameter[1][@type='com.autonavi.tbt.NaviStaticInfo']]" />
   <remove-node path="/api/package[@name='com.amap.api.navi']/interface[@name='AMapNaviListener']/method[@name='onNaviInfoUpdated' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.model.AMapNaviInfo']]" />
-
-  <remove-node path="/api/package[@name='com.amap.api.navi']/class[@name='AMapNavi']/method[@name='setAMapNaviListener' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.AMapNaviListener']]" />
-
-  <attr path="/api/package[@name='com.amap.api.navi']/interface[@name='AMapNaviListener']/method[@name='onArriveDestination' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.model.AMapNaviStaticInfo']]" name="managedName">OnArriveDestination1</attr>
+  <remove-node path="/api/package[@name='com.amap.api.navi']/class[@name='AMapNavi']/method[@name='setAMapNaviListener' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.AMapNaviListener']]" />-->
+  
+  <!--事件名相同-->
   <attr path="/api/package[@name='com.amap.api.maps']/interface[@name='AMap.OnMapScreenShotListener']/method[@name='onMapScreenShot' and count(parameter)=2 and parameter[1][@type='android.graphics.Bitmap'] and parameter[2][@type='int']]" name="managedName">OnMapScreenShot1</attr>
-
+  <attr path="/api/package[@name='com.amap.api.navi']/interface[@name='AMapNaviListener']/method[@name='onGetNavigationText' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String']]" name="managedName">OnGetNavigationText1</attr>
+  <!--重命名接口之后的，其实现也需要重命名-->
+  <attr path="/api/package[@name='com.amap.api.navi']/class[@name='AMapHudView']/method[@name='onGetNavigationText' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String']]" name="managedName">OnGetNavigationText1</attr>
+  
+  
   <!--IParcelableCreator接口返回类型-->
   <attr path="/api/package[@name='com.amap.api.maps.model']/class[@name='ArcOptionsCreator']/method[@name='createFromParcel' and count(parameter)=1 and parameter[1][@type='android.os.Parcel']]" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.amap.api.maps.model']/class[@name='ArcOptionsCreator']/method[@name='newArray' and count(parameter)=1 and parameter[1][@type='int']]" name="managedReturn">Java.Lang.Object[]</attr>
@@ -57,15 +61,13 @@
   <attr path="/api/package[@name='com.amap.api.maps.model']/class[@name='CircleOptionsCreator']/method[@name='newArray' and count(parameter)=1 and parameter[1][@type='int']]" name="managedReturn">Java.Lang.Object[]</attr>
 
   <!--小写自动转为大写造成的重复-->
-  <attr path="/api/package[@name='com.amap.api.mapcore.offlinemap']/class[@name='CityObject']/method[@name='a' and count(parameter)=0]" name="managedName">a</attr>
-  <attr path="/api/package[@name='com.amap.api.mapcore.offlinemap']/class[@name='CityObject']/method[@name='b' and count(parameter)=0]" name="managedName">b</attr>
+  <!--<attr path="/api/package[@name='com.amap.api.mapcore.offlinemap']/class[@name='CityObject']/method[@name='a' and count(parameter)=0]" name="managedName">a</attr>
+  <attr path="/api/package[@name='com.amap.api.mapcore.offlinemap']/class[@name='CityObject']/method[@name='b' and count(parameter)=0]" name="managedName">b</attr>-->
   
-  <!--重命名接口之后的，其实现也需要重命名-->
-  <attr path="/api/package[@name='com.amap.api.navi']/class[@name='AMapHudView']/method[@name='onArriveDestination' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.model.AMapNaviStaticInfo']]" name="managedName">OnArriveDestination1</attr>
   <!--接口实现时，参数类型不同-->
-  <attr path="/api/package[@name='com.amap.api.navi.model']/class[@name='AMapNaviPlayPoint']/method[@name='compareTo' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.model.AMapNaviPlayPoint']]/parameter[@name='p0']" name="type">Java.Lang.Object</attr>
+  <!--<attr path="/api/package[@name='com.amap.api.navi.model']/class[@name='AMapNaviPlayPoint']/method[@name='compareTo' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.model.AMapNaviPlayPoint']]/parameter[@name='p0']" name="type">Java.Lang.Object</attr>-->
   <!--子类、字段和父类名称重合-->
-  <attr path="/api/package[@name='com.amap.api.navi.model']/class[@name='TrafficStatus']/field[@name='trafficStatus']" name="managedName">TrafficStatusInner</attr>
+  <!--<attr path="/api/package[@name='com.amap.api.navi.model']/class[@name='TrafficStatus']/field[@name='trafficStatus']" name="managedName">TrafficStatusInner</attr>-->
   <!--SetOnBusLineSearchListener方法生成event时，会自动变成BusLineSearch造成重复-->
   <attr path="/api/package[@name='com.amap.api.services.busline']/class[@name='BusLineSearch']/method[@name='setOnBusLineSearchListener' and count(parameter)=1 and parameter[1][@type='com.amap.api.services.busline.BusLineSearch.OnBusLineSearchListener']]" name="managedName">SetOnBusLineSearchEventListener</attr>
   <attr path="/api/package[@name='com.amap.api.services.busline']/class[@name='BusStationSearch']/method[@name='setOnBusStationSearchListener' and count(parameter)=1 and parameter[1][@type='com.amap.api.services.busline.BusStationSearch.OnBusStationSearchListener']]" name="managedName">SetOnBusStationSearchEventListener</attr>

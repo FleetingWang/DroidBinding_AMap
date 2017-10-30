@@ -13,7 +13,7 @@
     <AssemblyName>DroidBinding_AMap</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,10 +47,61 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libgdinamapv4sdk752.so" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libgdinamapv4sdk752ex.so" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libtbt3631.so" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libwtbt145.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviData.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviGuide.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviMap.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviMapex.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviPos.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviRoute.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviSearch.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviUtils.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libRoadLineRebuildAPI.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\librtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libwtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libGNaviData.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libGNaviGuide.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libGNaviMap.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libGNaviMapex.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libGNaviPos.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libGNaviRoute.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libGNaviSearch.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libGNaviUtils.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libRoadLineRebuildAPI.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\librtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libwtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libGNaviData.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libGNaviGuide.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libGNaviMap.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libGNaviMapex.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libGNaviPos.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libGNaviRoute.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libGNaviSearch.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libGNaviUtils.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libRoadLineRebuildAPI.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\librtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libwtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libGNaviData.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libGNaviGuide.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libGNaviMap.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libGNaviMapex.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libGNaviPos.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libGNaviRoute.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libGNaviSearch.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libGNaviUtils.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libRoadLineRebuildAPI.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\librtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libwtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libGNaviData.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libGNaviGuide.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libGNaviMap.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libGNaviMapex.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libGNaviPos.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libGNaviRoute.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libGNaviSearch.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libGNaviUtils.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libRoadLineRebuildAPI.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\librtbt800.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86_64\libwtbt800.so" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -59,7 +110,7 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedJar Include="Jars\AMap3DMap_4.1.3_AMapNavi_1.9.4_AMapSearch_3.6.1_AMapLocation_3.2.0_20161208.jar" />
+    <EmbeddedJar Include="Jars\AMap3DMap_5.4.0_AMapNavi_5.4.0_AMapSearch_5.3.1_AMapLocation_3.6.1_20171012.jar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
