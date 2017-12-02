@@ -42,10 +42,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Additions\NativeSearchEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
     <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviData.so" />
     <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libGNaviGuide.so" />
@@ -110,7 +110,7 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedJar Include="Jars\AMap3DMap_5.4.0_AMapNavi_5.4.0_AMapSearch_5.3.1_AMapLocation_3.6.1_20171012.jar" />
+    <EmbeddedJar Include="Jars\AMap3DMap_5.6.0_AMapNavi_5.5.0_AMapSearch_5.5.0_AMapLocation_3.6.1_20171130.jar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
