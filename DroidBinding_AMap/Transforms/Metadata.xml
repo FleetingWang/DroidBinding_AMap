@@ -16,6 +16,94 @@
   <!--已有add、remove事件方法生成event，移除set事件方法-->
   <remove-node path="/api/package[@name='com.amap.api.navi']/class[@name='AMapNavi']/method[@name='setAMapNaviListener' and count(parameter)=1 and parameter[1][@type='com.amap.api.navi.AMapNaviListener']]" />
 
+  <!--继承了私有类NativeSearchEngine，C#中需要更改为公开类-->
+  <add-node path="/api/package[@name='com.autonavi.ae.search']">
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="NativeSearchEngine" static="false" visibility="public">
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeAbortSearch" native="true" return="int" static="false" synchronized="true" visibility="protected">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeAddSearchObserver" native="true" return="int" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="com.autonavi.ae.search.INativeSearchObserver">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeCreateSearcher" native="true" return="int" static="false" synchronized="true" visibility="protected">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeDestroy" native="true" return="int" static="false" synchronized="true" visibility="protected">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeGetPoiCategoryList" native="true" return="int" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="int">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeGetPoiParam" native="true" return="int" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="int">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeInit" native="true" return="int" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="java.lang.String">
+        </parameter>
+        <parameter name="p1" type="java.lang.String">
+        </parameter>
+        <parameter name="p2" type="java.lang.String">
+        </parameter>
+        <parameter name="p3" type="java.lang.String">
+        </parameter>
+        <parameter name="p4" type="int">
+        </parameter>
+        <parameter name="p5" type="int">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeRemoveSearchObserver" native="true" return="int" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="com.autonavi.ae.search.INativeSearchObserver">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeSearchAdareaInfo" native="true" return="int" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="int">
+        </parameter>
+        <parameter name="p1" type="java.lang.String">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeSetMccPath" native="true" return="int" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="java.lang.String">
+        </parameter>
+        <parameter name="p1" type="int">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeSetPoiParam" native="true" return="int" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="int">
+        </parameter>
+        <parameter name="p1" type="int">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="nativeStartSearch" native="true" return="com.autonavi.ae.search.model.SearchStatus" static="false" synchronized="true" visibility="protected">
+        <parameter name="p0" type="int">
+        </parameter>
+        <parameter name="p1" type="int">
+        </parameter>
+        <parameter name="p2" type="java.lang.String">
+        </parameter>
+        <parameter name="p3" type="int">
+        </parameter>
+        <parameter name="p4" type="float">
+        </parameter>
+        <parameter name="p5" type="float">
+        </parameter>
+        <parameter name="p6" type="int">
+        </parameter>
+        <parameter name="p7" type="int">
+        </parameter>
+        <parameter name="p8" type="int">
+        </parameter>
+        <parameter name="p9" type="int">
+        </parameter>
+        <parameter name="p10" type="com.autonavi.ae.search.model.GObjectID[]">
+        </parameter>
+      </method>
+      <field deprecated="not deprecated" final="true" name="GSEARCH_TYPE_AROUND" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="GSEARCH_TYPE_FTS" static="true" transient="false" type="int" type-generic-aware="int" value="8" visibility="public" volatile="false">
+      </field>
+    </class>
+  </add-node>
+
   <!--事件名相同-->
   <attr path="/api/package[@name='com.amap.api.maps']/interface[@name='AMap.OnMapScreenShotListener']/method[@name='onMapScreenShot' and count(parameter)=2 and parameter[1][@type='android.graphics.Bitmap'] and parameter[2][@type='int']]" name="managedName">OnMapScreenShot1</attr>
   <attr path="/api/package[@name='com.amap.api.navi']/interface[@name='AMapNaviListener']/method[@name='onGetNavigationText' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String']]" name="managedName">OnGetNavigationText1</attr>
@@ -82,8 +170,6 @@
   <!--字段名与类名相同-->
   <attr path="/api/package[@name='com.autonavi.ae.route.model']/class[@name='TipInfo']/field[@name='tipInfo']" name="managedName">TipInfoStr</attr>
 
-  <!--继承了不存在的类(.so内的)，此处应更改为Java.Lang.Object-->
-  
   <!--移除抽象类中继承的抽象方法，C#中需要用override或添加new，因为依旧是抽象方法，此处可省略。-->
   <remove-node path="/api/package[@name='com.autonavi.ae.gmap.gesture']/class[@name='TwoFingerGestureDetector']/method[@name='handleInProgressEvent' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='android.view.MotionEvent']]" />
   <remove-node path="/api/package[@name='com.autonavi.ae.gmap.gesture']/class[@name='TwoFingerGestureDetector']/method[@name='handleStartProgressEvent' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='android.view.MotionEvent']]" />
